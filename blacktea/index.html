@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlackTea</title>
+    <link rel="stylesheet" href="Content/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Content/css/index.css">
+</head>
+
+<body>
+    <div id="app" v-cloak>
+        <div class="pop">
+            <p>注册成功！</p>
+        </div>
+        <div class="modifybox">
+            <div class="modify">
+                <div class="modify-item">
+                    <div class="item-name">名称</div>
+                    <input class="item-input" type="text" v-model="mschedule_name">
+                </div>
+                <div class="modify-item">
+                    <div class="item-name">专注时间</div>
+                    <input class="item-input" type="text" v-model="mduration">
+                </div>
+                <div class="modify-item">
+                    <div class="item-name">备注</div>
+                    <input class="item-input" type="text" v-model="mremark">
+                </div>
+                <div class="modify-item">
+                    <div class="item-name">类型</div>
+                    <select v-model="mtype_id">
+                        <option v-for="(item,index) in type_list" :value="item.id">{{item.name}}</option>
+                    </select>
+                </div>
+                <div class="modify-item">
+                    <input class="modifybtn submitbtn" type="button" value="提交" @click="submitlclick">
+                    <input class="modifybtn cancelbtn" type="button" value="取消" @click="cancelclick">
+                </div>
+            </div>
+        </div>
+        <div class="addbox" v-show='addboxShow'>
+            <div class="addItem">
+                <div class="add-item">
+                    <div class="item-name">名称</div>
+                    <input class="item-input" type="text" v-model="add_schedule_name">
+                </div>
+                <div class="add-item">
+                    <div class="item-name">专注时间</div>
+                    <input class="item-input" type="text" v-model="add_duration">
+                </div>
+                <div class="add-item">
+                    <div class="item-name">备注</div>
+                    <input class="item-input" type="text" v-model="add_remark">
+                </div>
+                <div class="add-item">
+                    <div class="item-name">类型</div>
+                    <select v-model="add_type_id">
+                        <option v-for="(item,index) in type_list" :value="item.id">{{item.name}}</option>
+                    </select>
+                </div>
+                <div class="add-item">
+                    <input class="addbtn submitbtn" type="button" value="创建" @click='addItem_hide'>
+                    <input class="addbtn cancelbtn" type="button" value="取消" @click="addHide">
+                </div>
+            </div>
+        </div>
+
+
+        <!-- 头部logo与菜单 -->
+        <header class="row index_header" id="head"><img src="Content/images/logo.png" alt="logo" style="width: 40%;margin-left: 30px;">
+            <span><img src="Content/images/菜单.png" alt="menu" id="menu" style="width: 32px;" @click='show'></span>
+            <div v-show='flag' class="top-memu">
+                <ul style="margin-left: 15px;">
+                    <li><a href="index.html">首页</a> </li>
+                    <li><a href="data.html">统计</a> </li>
+                    <li><a href="room.html">自习室</a> </li>
+
+                    <li><a href="reading.html">图书角</a></li>
+                    <li><a href="english.html">英语角</a></li>
+
+                </ul>
+
+            </div>
+        </header>
+        <div id="item-list">
+            <ul class="items">
+                <li class="item" style="position: relative;" v-for='(item,index) in itemList'>
+                    <div class="main row">
+                        <div @click="modifysch(index)">{{item.schedule_name}}</div>
+                        <div class="startItem" style="font-size: 20px;font-weight: 600;position: absolute;right: 50px;" @click="startsch(index)">开始</div>
+                        <div style="position: absolute;bottom: -20px;margin-left: 11%;">{{item.duration}} min</div>
+                    </div>
+                </li>
+            </ul>
+
+            <!-- 添加的按钮 -->
+            <div class="add">
+                <img src=" Content/images/添加-.png " alt="add " style="width: 48px; " @click="addShow">
+            </div>
+
+            <div class="container-fluid ">
+                <footer style="height: 80px;width: 110%;margin-left: -5%; background: white;position: fixed;bottom:-15px;z-index: 1100; ">
+                    <div class="row foot-menu " style="margin-left: 14%;width: 80%; ">
+                        <div class="col-3 " style="vertical-align: middle;line-height: 65px; ">
+                            <a href="index.html "><img id="foot-menu1 " src="Content/images/待办.png " alt=" " width="32px "></a>
+                        </div>
+                        <div class="col-3 " style="vertical-align: middle;line-height: 65px; ">
+                            <a href="data.html "><img id="foot-menu2 " src="Content/images/数据.png " alt=" " width="32px "></a>
+                        </div>
+                        <div class="col-3 " style="vertical-align: middle;line-height: 65px; ">
+                            <a href="room.html "><img id="foot-menu3 " src="Content/images/教室.png " alt=" " width="32px "></a>
+                        </div>
+                        <div class="col-2 " style="vertical-align: middle;line-height: 65px; ">
+                            <a href="personal.html "><img id="foot-menu4 " src="Content/images/用户.png " alt=" " width="32px "></a>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+
+
+        </div>
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+</body>
+<script src="Content/js/jquery.min.js "></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js "></script>
+<script src="Content/js/cookie.js "></script>
+<script src="Content/js/vue.js "></script>
+<script src="Content/js/index.js "></script>
+
+
+
+</html>

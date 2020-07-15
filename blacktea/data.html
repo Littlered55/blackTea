@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlackTea.data</title>
+    <link rel="stylesheet" href="Content/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Content/css/index.css">
+</head>
+
+<body>
+    <div class="container-fluid" id="app" v-cloak>
+        <!-- 头部logo与菜单 -->
+        <header class="row index_header" id="head"><img src="Content/images/logo.png" alt="logo" style="width: 40%;margin-left: 30px;">
+            <span><img src="Content/images/菜单.png" alt="menu" id="menu" style="width: 32px;" @click="show()"></span>
+            <div v-show='flag' class="top-memu">
+                <ul style="margin-left: 15px;">
+                    <li><a href="index.html">首页</a> </li>
+                    <li><a href="data.html">统计</a> </li>
+                    <li><a href="room.html">自习室</a> </li>
+
+                    <li><a href="reading.html">图书角</a></li>
+                    <li><a href="english.html">英语角</a></li>
+
+                </ul>
+
+            </div>
+        </header>
+        <hr>
+        <div id="back" style="margin-top: -15px;">
+            <div style="height: 15px;width: 100%;"></div>
+            <div class="datas ">
+                <div style="padding: 10px;">累计专注</div>
+                <div class="row" style="margin-left: 15px;">
+                    <div class="col-4">
+                        次数/次
+                    </div>
+                    <div class="col-4">
+                        时长/min
+                    </div>
+                    <div class="col-4">
+                        天数/天
+                    </div>
+                </div>
+                <div class="row digit" style="margin-left: 15px;">
+                    <div class="col-4">
+                        {{counttime}}
+                    </div>
+                    <div class="col-4">
+                        {{countduration}}
+                    </div>
+                    <div class="col-4">
+                        {{countday}}
+                    </div>
+                </div>
+
+            </div>
+            <div class="datas">
+                <div class="row" style="margin-left: -5px;padding-top: 10px;">
+                    <div class="col-8">
+                        当日专注 &nbsp&nbsp {{today}}
+                    </div>
+                    <div class="clo-4 fanye">
+                        <img src="Content/images/翻页1.png" alt="" style="width: 16px;">
+                        <img src="Content/images/翻页2.png" alt="" style="width: 16px;margin-left: 15px;">
+                    </div>
+                </div>
+                <div class="row" style="margin-left: 15px;margin-top: 8px;">
+                    <div class="col-4">
+                        次数/次
+                    </div>
+                    <div class="col-4">
+                        时长/min
+                    </div>
+
+                </div>
+                <div class="row digit" style="margin-left: 15px;">
+                    <div class="col-4">
+                        {{count_time}}
+                    </div>
+                    <div class="col-4">
+                        {{count_duration}}
+                    </div>
+
+                </div>
+            </div>
+            <div class="datas">
+                <div class="row t_duration" style="margin-left: 15px;padding-top: 15px;">
+                    近十天专注总时长<span style="margin-left:10px; font-size: 24px;margin-top: -5px;color: #fb7813;">{{tenData}}</span>min
+                </div>
+                <div class="row t_duration" style="margin-left: 15px;margin-top: 18px;">
+                    近一个月专注总时长<span style="margin-left:10px; font-size: 24px;margin-top: -5px;color: #fb7813;">{{sumduration}}</span>min
+                </div>
+
+            </div>
+            <div class="datas1">
+                <p style="padding-top: 10px;margin-left: 10px;">起床打卡时间分布</p>
+                <div id="main" style="width: 340px;height:360px;margin-left: 15px;margin-top: -25px;">
+                </div>
+            </div>
+            <div style="height: 80px;width: 100%;"></div>
+
+            <footer style="height: 80px;width: 110%;margin-left: -5%; background: white;position: fixed;bottom: -15px;z-index: 1100;">
+                <div class="row foot-menu" style="margin-left: 10%;width: 80%;">
+                    <div class="col-3" style="vertical-align: middle;line-height: 65px;">
+                        <a href="index.html"><img id="foot-menu1" src="Content/images/待办.png" alt="" width="32px"></a>
+                    </div>
+                    <div class="col-3" style="vertical-align: middle;line-height: 65px;">
+                        <a href="data.html"><img id="foot-menu2" src="Content/images/数据.png" alt="" width="32px"></a>
+                    </div>
+                    <div class="col-3" style="vertical-align: middle;line-height: 65px;">
+                        <a href="room.html"><img id="foot-menu3" src="Content/images/教室.png" alt="" width="32px"></a>
+                    </div>
+                    <div class="col-2" style="vertical-align: middle;line-height: 65px;">
+                        <a href="personal.html">
+                            <img id="foot-menu4" src="Content/images/用户.png" alt="" width="32px">
+                        </a>
+                    </div>
+
+            </footer>
+
+
+            </div>
+
+        </div>
+
+
+
+</body>
+<script src="Content/js/jquery.min.js"></script>
+<script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
+<script src="Content/js/cookie.js"></script>
+<script src="Content/js/vue.js"></script>
+<script src="Content/js/data.js"></script>
+
+
+
+</html>

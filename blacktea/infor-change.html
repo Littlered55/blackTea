@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlackTea</title>
+    <link rel="stylesheet" href="Content/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Content/css/index.css">
+</head>
+
+<body>
+    <div id="app1" class="container">
+        <div id="back-to-personal" style="margin-left: 15px;margin-top: 15px;">
+            <div class="row" style="position: relative;">
+                <img src="Content/images/翻页1.png" alt="" style="width: 24px;" @click="backToinfor">
+                <span style="margin-left: 15px;">个人信息修改</span>
+                <input type="button" value="保存" style="position: absolute;right: 30px;" @click="changeText">
+            </div>
+
+        </div>
+        <hr>
+
+        <div class="change-infor">
+
+            <input type="text" id="change-info-input" v-model="inforText">
+
+        </div>
+    </div>
+
+
+
+
+</body>
+<script src="Content/js/jquery.min.js "></script>
+<script src="Content/js/bootstrap.min.js "></script>
+<script src="Content/js/cookie.js "></script>
+<script src="Content/js/vue.js"></script>
+<script src="Content/js/infor-change.js"></script>
+
+
+
+</html>

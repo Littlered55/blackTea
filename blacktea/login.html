@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlackTea</title>
+    <link rel="stylesheet" href="Content/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Content/css/index.css">
+    <script src="Content/js/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="pop">
+        <p>注册成功！</p>
+        <!-- <p>3s</p> -->
+    </div>
+    <div class="container-fluid loginback" id="app">
+        <img src="Content/images/logo1.png" style="width: 80%;margin-left: 10%;">
+        <!-- 头部logo与菜单 -->
+        <!-- <header class="row index_header" id="head"><img src="Content/images/logo.png" alt="logo" style="width: 40%;margin-left: 30px;">
+            <span><img src="Content/images/菜单.png" alt="menu" id="menu" style="width: 32px;" click="menuShow()"></span>
+            <div class="top-memu">
+                <ul style="margin-left: 15px;">
+                    <li><a href="index.html">首页</a> </li>
+                    <li><a href="data.html">统计</a> </li>
+                    <li><a href="room.html">自习室</a> </li>
+
+                    <li><a href="">图书角</a></li>
+                    <li><a href="">英语角</a></li>
+
+                </ul>
+
+            </div>
+        </header> -->
+        <!-- <hr> -->
+        <div class="login-form">
+            <form action="" style="margin-top: 100px;margin-left: 30px;">
+
+                <div class="login-box">
+                    <input class="log-in" type="text" placeholder="请输入账号" v-model="account">
+
+                </div>
+                <div class="login-box" style="margin-top: 30px;">
+                    <input class="log-in" type="password" placeholder="请输入密码" v-model="password">
+                </div>
+
+                <div class="row" style="margin-top: 50px;">
+                    <div class="col-4">
+                        <input type="button" value="登录" @click="login()">
+                    </div>
+                    <div class="col-1">
+                        <a href="registrar.html"><input type="button" value="注册"></a>
+                    </div>
+
+                </div>
+
+                <div class="messagebox" style="color: red;">
+                    {{message}}
+                </div>
+
+            </form>
+
+        </div>
+
+
+        <!-- <footer style="height: 80px;width: 110%;margin-left: -5%; background: white;position: fixed;bottom: -15px;z-index: 1100;">
+            <div class="row foot-menu" style="margin-left: 10%;width: 80%;">
+                <div class="col-3" style="vertical-align: middle;line-height: 65px;">
+                    <a href="index.html"><img id="foot-menu1" src="Content/images/待办.png" alt="" width="32px"></a>
+                </div>
+                <div class="col-3" style="vertical-align: middle;line-height: 65px;">
+                    <a href="data.html"><img id="foot-menu2" src="Content/images/数据.png" alt="" width="32px"></a>
+                </div>
+                <div class="col-3" style="vertical-align: middle;line-height: 65px;">
+                    <a href="room.html"><img id="foot-menu3" src="Content/images/教室.png" alt="" width="32px"></a>
+                </div>
+                <div class="col-2" style="vertical-align: middle;line-height: 65px;">
+                    <a href="personal.html"><img id="foot-menu4" src="Content/images/用户.png" alt="" width="32px"></a>
+                </div>
+            </div>
+        </footer> -->
+
+
+    </div>
+
+    </div>
+
+
+
+</body>
+<script src="Content/js/cookie.js"></script>
+<script src="Content/js/vue.js"></script>
+<script src="Content/js/login.js"></script>
+
+
+</html>

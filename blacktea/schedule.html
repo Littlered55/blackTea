@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlackTea</title>
+    <link rel="stylesheet" href="Content/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Content/css/index.css">
+</head>
+
+<body>
+    <div id="app" class="container item-start">
+        <div class="mesbox">
+            {{message}}
+        </div>
+        <div class="circle">
+            <span id="timeout">{{minute}}:{{second}}</span>
+        </div>
+        <footer id="opt">
+            <div class="row">
+                <div @click="adfinish">提前完成</div>
+                <div @click="pausesch" style="margin-left: 1px;">{{pausemsg}}</div>
+
+            </div>
+        </footer>
+
+
+    </div>
+
+
+
+</body>
+<script src="Content/js/jquery.min.js"></script>
+<script src="Content/js/cookie.js"></script>
+<script src="Content/js/vue.js"></script>
+<script src="Content/js/schedule.js"></script>
+
+
+</html>

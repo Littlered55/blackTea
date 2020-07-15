@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlackTea</title>
+    <link rel="stylesheet" href="Content/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Content/css/index.css">
+</head>
+
+<body>
+
+    <div class="container-fluid loginback" id="app">
+        <img src="Content/images/logo1.png" style="width: 80%;margin-left: 10%;">
+        <div class="pop">
+            <p>注册成功！</p>
+            <!-- <p>3s</p> -->
+        </div>
+        <!-- <header class="row index_header" id="head"><img src="Content/images/logo.png" alt="logo" style="width: 40%;margin-left: 30px;">
+            <span><img src="Content/images/菜单.png" alt="menu" id="menu" style="width: 32px;" click="menuShow()"></span>
+            <div class="top-memu">
+                <ul style="margin-left: 15px;">
+                    <li><a href="index.html">首页</a> </li>
+                    <li><a href="data.html">统计</a> </li>
+                    <li><a href="room.html">自习室</a> </li>
+
+                    <li><a href="">图书角</a></li>
+                    <li><a href="">英语角</a></li>
+
+                </ul>
+
+            </div>
+        </header>
+        <hr> -->
+        <div class="login-form">
+            <form action="" style="margin-top: 30px;margin-left: 30px;">
+
+                <div>
+                    <span>账&nbsp&nbsp&nbsp&nbsp号：</span><input v-model="account" type="text" placeholder="请输入账号">
+
+                </div>
+                <div style="margin-top: 30px;">
+                    <span>密&nbsp&nbsp&nbsp&nbsp码：</span><input v-model="password" type="password" placeholder="请输入密码">
+                </div>
+                <div style="margin-top: 30px;">
+                    <span>用户名：</span><input v-model="username" type="text" placeholder="请输入用户名">
+                </div>
+                <div style="margin-top: 30px;">
+                    <span>年&nbsp&nbsp&nbsp&nbsp级：</span><input v-model="level" type="text" placeholder="请输入年级">
+                </div>
+                <div style="margin-top: 30px;">
+                    <span>电&nbsp&nbsp&nbsp&nbsp话：</span><input v-model="phone" type="text" placeholder="请输入电话">
+                </div>
+                <div class="row" style="margin-top: 30px;">
+                    <div class="col-4">
+                        <a href="login.html"><input type="button" value="登录"></a>
+                    </div>
+                    <div class="col-1">
+                        <a href="#"><input type="button" value="注册" @click="toRegistrar"></a>
+                    </div>
+
+                </div>
+
+            </form>
+            <p>提示：<span style="color: red;">{{remind}}</span></p>
+
+        </div>
+    </div>
+</body>
+<script src="Content/js/jquery.min.js"></script>
+<script src="Content/js/vue.js"></script>
+<script src="Content/js/registrar.js"></script>
+
+</html>
